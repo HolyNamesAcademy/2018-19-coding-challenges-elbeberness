@@ -13,7 +13,13 @@ public class NumberFour {
      * @return an array with the specified number of left rotations performed
      */
     public int[] leftRotation(int[] input, int rotations) {
-        // Delete the line below and implement the method!
-        throw new UnsupportedOperationException();
+        for (int i = 0; i<input.length; i++)
+        {
+            while (i<rotations)
+            {
+               
+            }
+
+        }
     }
 }
