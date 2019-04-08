@@ -15,6 +15,7 @@ public class NumberTwo {
      * Given a = 4, b = 6, c = 2
      * Return true
      *
+     *
      * Example:
      * Given a = 5, b = 6, c = 3
      * Return false
@@ -22,7 +23,9 @@ public class NumberTwo {
      * @return true if the numbers are evenly spaced, otherwise false
      */
     public boolean evenlySpaced(int a, int b, int c){
-        // Delete the line below and implement the method!
-        throw new UnsupportedOperationException();
+       if (Math.abs(a-b) == Math.abs (b-c) || Math.abs(a-c) == Math.abs(b-a))
+           return true;
+       else
+           return false;
     }
 }
