@@ -27,29 +27,31 @@ public class NumberThree {
     public String timeConversion(String s) {
         String firstTwo = s.substring(0,2);
 
-        if (s.indexOf("AM")>0 && firstTwo!="12")
+        if (s.indexOf("AM")>0 && !firstTwo.equals("12"))
             return s.substring(0, s.length()-2);
 
-        if (s.indexOf("AM")>0 && firstTwo == "12")
+        if (s.indexOf("AM")>0 && firstTwo.equals ("12"))
         {
-            s = "00" + s.substring (2, s.length());
+            s = "00" + s.substring (2, s.length()-2);
 
         }
 
-        String numbers = s.substring(0,2);
-        int newTime = Integer.parseInt(numbers);
 
-        if (s.indexOf("PM")>0)
-            {
-                if (newTime<12)
-                {
-                    newTime+=12;
-                    s = newTime + s.substring (2, s.length()-12);
-                }
-                else
-                    s.substring (0, s.length()-2);
 
-            }
+
+        if (s.indexOf("PM")>0 && !firstTwo.equals("12"))
+        {
+            int numbers = Integer.parseInt(firstTwo);
+            numbers += 12;
+            s = numbers + s.substring(2, s.length() - 2);
+
+        }
+
+        if (s.indexOf("PM")>0 && firstTwo.equals ("12"))
+        {
+            s = s.substring (0, s.length()-2);
+
+        }
 
             return s;
 
